@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# DLNP science network
+
+Statistics of Laboratory, science network between students and teachers, bachelors, masters, phds.
+
+## Techologies
+
+- React
+- D3 js library for manipulating data
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
