@@ -77,8 +77,8 @@ function AxisHorizontal ({ dimensions, label, formatTick, scale, ...props }) {
 function AxisVertical ({ dimensions, label, data, formatTick, scale, ...props }) {
   const numberOfTicks = dimensions.boundedHeight / 70
 
-  const maxLength = Math.max(...data.map(d=>d.length))
-  const rightMargin = -maxLength*10
+  const maxLength = Math.max(...data.map(d => d.length))
+  const rightMargin = -maxLength * 10
 
  // const ticks = scale.ticks()
  // console.log(ticks)

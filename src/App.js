@@ -7,7 +7,8 @@ import { Degree } from './Components/Degrees/Degree';
 import Map from './Map'
 import Pie from './Pie';
 import ScatterPlot from './ScatterPlot';
-import {/*getMapData,*/ getPieData,getScatterData} from './utils/data'
+import { data,/*getMapData,*/ getPieData,getScatterData} from './utils/data'
+import globe from './utils/globe.json';
 
 const nodesAccessor = d => d.nodes;
 const linksAccessor = d => d.links;
@@ -39,6 +40,7 @@ const projectsAccessor = d => d.projects; //[{}]
 const getData = () =>({
   //map: getMapData(),
   //scatter: getScatterData(),
+  map: data,
   pie: getPieData(),
   scatter: getScatterData(),
 })
@@ -46,7 +48,7 @@ const getData = () =>({
 const App = () => {
 
   const [data, setData] = useState(getData());
-  console.log(data.scatter)
+  // console.log(data.scatter)
 
     return (
       <div>
@@ -64,7 +66,7 @@ const App = () => {
             xLabel='Participants'
             yLabel='Projects' />
             <Map
-           //   data={data.map}
+              data={ data.map }
               nodesAccessor={nodesAccessor}
               linksAccessor={linksAccessor}
               label='Map' />

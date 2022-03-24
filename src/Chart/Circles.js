@@ -8,10 +8,10 @@ const Circles = ({ data, keyAccessor, xAccessor, yAccessor, radius }) => (
         {data.map((d, i) => (            
             <circle
                 className="Circles__circle"
-                key={keyAccessor(d, i)}
-                cx={xAccessor(d[1])}
-                cy={yAccessor(d[0])}
-                r={typeof radius == "function" ? radius(d) : radius}
+                key = { keyAccessor(d, i) }
+                cx = { xAccessor(d) }
+                cy = { yAccessor(d) }
+                r = {typeof radius == "function" ? radius(d) : radius}
             />
         ))}
     </React.Fragment>

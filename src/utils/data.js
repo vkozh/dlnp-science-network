@@ -1,4 +1,4 @@
-const data = {
+export let data = {
     nodes: [{
         "id": "1",
         "name": "Dmitry Naumov",
@@ -1304,6 +1304,7 @@ const data = {
 }
 
 export const getMapData = () => {
+    const node = data.node;
     return []
 }
 

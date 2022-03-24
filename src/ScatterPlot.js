@@ -19,20 +19,19 @@ const ScatterPlot = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
     const yScale = d3.scaleBand()
         .domain(Object.keys(data))
         .range([dimensions.boundedHeight, 0])
-      
 
-    /* const xScale1 = d3.scaleLinear()
-         .domain([d3.min(Object.values(data), d => d.length - 0.5), d3.max(Object.values(data), d => d.length + 0.5)])
-         .range([0, dimensions.width * 0.5])
+    //  const xScale1 = d3.scaleLinear()
+    //      .domain([d3.min(Object.values(data), d => d.length - 0.5), d3.max(Object.values(data), d => d.length + 0.5)])
+    //      .range([0, dimensions.width * 0.5])
  
-     const yName = d3.scaleBand()
-         .domain(Object.keys(data))
-         .range([0, dimensions.boundedHeight * 0.5])
-         .paddingInner(1)
-         .paddingOuter(0.5)*/
+    //  const yName = d3.scaleBand()
+    //      .domain(Object.keys(data))
+    //      .range([0, dimensions.boundedHeight * 0.5])
+    //      .paddingInner(1)
+    //      .paddingOuter(0.5)
 
-    const xAccessorScaled = d => xScale(xAccessor(d))
-    const yAccessorScaled = d => yScale(yAccessor(d))
+    const xAccessorScaled = d => xScale(xAccessor(d[1]))
+    const yAccessorScaled = d => yScale(yAccessor(d[0]))
     const keyAccessor = (d, i) => i
 
     return (
@@ -47,15 +46,15 @@ const ScatterPlot = ({ data, xAccessor, yAccessor, xLabel, yLabel }) => {
                 <Axis
                     dimensions={dimensions}
                     dimension="y"
-                    data={Object.keys(data)}
-                    scale={yScale}
-                    label={yLabel}
+                    data={ Object.keys(data) }
+                    scale={ yScale }
+                    label={ yLabel }
                 />
                 <Circles
-                    data={Object.entries(data)}
-                    keyAccessor={keyAccessor}
-                    xAccessor={xAccessorScaled}
-                    yAccessor={yAccessorScaled}
+                    data={ Object.entries(data) }
+                    keyAccessor={ keyAccessor }
+                    xAccessor={ xAccessorScaled }
+                    yAccessor={ yAccessorScaled }
                 />
             </Chart>
         </div>
