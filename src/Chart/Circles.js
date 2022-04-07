@@ -2,12 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { accessorPropsType } from "./utils";
 
-const Circles = ({ data, keyAccessor, xAccessor, yAccessor, radius }) => (
+const Circles = ({ data, keyAccessor, xAccessor, yAccessor, radius, ...props }) => (
 
     <React.Fragment>
         {data.map((d, i) => (            
-            <circle
-                className="Circles__circle"
+            <circle {...props}
+                className = {"Circles__circle " + d.name }
                 key = { keyAccessor(d, i) }
                 cx = { xAccessor(d) }
                 cy = { yAccessor(d) }

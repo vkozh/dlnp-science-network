@@ -6,6 +6,7 @@ import { Views } from './Components/Views/Views';
 import { Degree } from './Components/Degrees/Degree';
 import Map from './Map'
 import Pie from './Pie';
+import Graph from "./Graph";
 import ScatterPlot from './ScatterPlot';
 import { data,/*getMapData,*/ getPieData,getScatterData} from './utils/data'
 import globe from './utils/globe.json';
@@ -40,6 +41,7 @@ const projectsAccessor = d => d.projects; //[{}]
 const getData = () =>({
   //map: getMapData(),
   //scatter: getScatterData(),
+  graph: data,
   map: data,
   pie: getPieData(),
   scatter: getScatterData(),
@@ -58,18 +60,21 @@ const App = () => {
         </div>
         <div className="App__charts">
           <Pie
-            data={data.pie} /> 
+            data = {data.pie} /> 
           <ScatterPlot
-            data={data.scatter}
+            data = {data.scatter}
             xAccessor={scatterCount}
             yAccessor={scatterProjects}
             xLabel='Participants'
             yLabel='Projects' />
             <Map
-              data={ data.map }
+              data = { data.map }
               nodesAccessor={nodesAccessor}
               linksAccessor={linksAccessor}
               label='Map' />
+            <Graph 
+              data = { data.graph }
+              label = 'Graph' />
         </div>
       </div>
     )

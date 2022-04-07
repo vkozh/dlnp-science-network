@@ -27,15 +27,15 @@ const Map = ({
     
     data.nodes.forEach((d) => {
         let pos = proj([d.lon, d.lat]);
-        d.x = pos[0];
-        d.y = pos[1];
+        d.xx = pos[0];
+        d.yy = pos[1];
     })
     
     const colorAccessor = d3.scaleOrdinal(d3.schemeAccent);
     const dAccessor = d => path(d);
     const keyAccessor = (d, i) => i;
-    const xAccessor = d => d.x;
-    const yAccessor = d => d.y;
+    const xAccessor = d => d.xx;
+    const yAccessor = d => d.yy;
 
     return (
     <div className = "Map" ref={ ref }>
