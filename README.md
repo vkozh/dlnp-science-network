@@ -2,7 +2,7 @@
 
 Statistics of Laboratory, science network between students and teachers, bachelors, masters, phds.
 
-*Learning with Amelia Wattenberger at https://www.newline.co/fullstack-d3*
+*Learning with Amelia Wattenberger at https://www.newline.co/courses/fullstack-d3-masterclass/*
 
 ## Techologies
 
